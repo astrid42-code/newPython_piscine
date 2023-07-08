@@ -12,7 +12,7 @@ months = {
 
 
 seconds = time.time()
-len_s = len(seconds)
+# len_s = len(seconds)
 
 
 other_seconds = '{:.2e}'.format(time.time())
