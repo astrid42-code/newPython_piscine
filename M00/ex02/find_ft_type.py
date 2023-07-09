@@ -14,11 +14,6 @@ def all_thing_is_obj(object: any) -> int:
         print(object, "is in the kitchen :", type(object))
     else:
         print("Type not found")
-        print("42")
-        sys.exit(1)
-
-
-# pk 42 a la fin sur output prevu et moi j'ai none? 
-
+        return 42
 
 # ATTENTION : Running your function alone does nothing.
