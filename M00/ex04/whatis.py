@@ -1,7 +1,6 @@
 import sys
 
 if (len(sys.argv) == 1):
-	# print("There is no argument")
 	sys.exit(1)
 if (len(sys.argv) > 2):
 	assert False, "There are too many arguments"

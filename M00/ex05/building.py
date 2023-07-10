@@ -47,7 +47,7 @@ def main():
     try:
         text_analyzer(text)
     except Exception:
-	    assert False, "AssertionError: argument is not a string"
+	    assert False, "argument is not a string"
 
 if __name__ == "__main__":
     main()
