@@ -1,8 +1,12 @@
+def isNan(num):
+    return num != num
+
 def NULL_not_found(object: any) -> int:
     if object == None:
         print("Nothing:", object, type(object))
         return 0
-    elif object == 'NaN': #pb dans la condition (Cheese: nan <class 'float'>)
+    elif isNan(object): #pb dans la condition (Cheese: nan <class 'float'>)
+        print("Cheese:", object, type(object))
         return 0
     elif object == 0:
         print("Zero:", object, type(object))
@@ -14,7 +18,6 @@ def NULL_not_found(object: any) -> int:
         print("Fake:", object, type(object))
         return 0
     else:
-        print("Cheese:", object, type(object))
         print("Type not Found")
         return 1
 
