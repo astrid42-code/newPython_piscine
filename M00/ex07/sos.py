@@ -39,6 +39,7 @@ NESTED_MORSE = {
     '8': '---..',
     '9': '----.',
     '0': '-----',
+    ' ' : '/ '
     # '.': '.-.-.-',
     # ',': '--..--',
     # '?': '..--..',
@@ -63,8 +64,7 @@ str = ''
 if (len(sys.argv) == 1):
     sys.exit(1)
 elif (len(sys.argv) > 2):
-    sys.argv.pop(0)
-    str = ' '.join(sys.argv)
+    assert False, "the arguments are bad"
 else:
     str = sys.argv[1]
 
@@ -73,13 +73,9 @@ def to_morse_code(str):
     for char in str:
         if char.islower():
             char = char.upper()
-        if char == ' ':
-            morse_code += '/ '
         elif char not in NESTED_MORSE.keys():
-            print("ERROR")
-            sys.exit(1)
-        else:
-            morse_code += NESTED_MORSE[char] + ' '
+            assert False, "the arguments are bad"
+        morse_code += NESTED_MORSE[char] + ' '
     return morse_code
 
 morse_code = str
