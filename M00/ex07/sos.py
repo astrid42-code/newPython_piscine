@@ -70,6 +70,10 @@ else:
 
 
 def to_morse_code(str):
+
+    """
+    
+    """
     morse_code = ''
     for char in str:
         if char.islower():

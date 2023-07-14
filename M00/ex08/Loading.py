@@ -3,6 +3,11 @@
 
 
 def ft_tqdm(lst: range) -> None:
+
+    """
+
+    """
+    
     # current = time.time()
     for i in range(len(lst)):
         print('\r')

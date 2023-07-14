@@ -28,16 +28,17 @@ def text_analyzer(str):
                 nb += 1
         total = len(str)
         # p : punctuation = total nb of chars - analyzed chars - numbers
-        p = total - (uc + lc + s) - nb
-        aff(total, uc, lc, p, s)
+        p = total - (uc + lc + s + nb)
+        aff(total, uc, lc, p, s, nb)
 
 
-def aff(total, uc, lc, p, s):
-    print("The text contains ", total, " character(s):")
-    print("- ", uc, " upper letter(s)")
-    print("- ", lc, " lower letter(s)")
-    print("- ", p, " punctuation mark(s)")
-    print("- ", s, " space(s)")
+def aff(total, uc, lc, p, s, nb):
+    print("The text contains ", total, " characters:")
+    print(uc, " upper letters")
+    print(lc, " lower letters")
+    print(p, " punctuation marks")
+    print(s, " spaces")
+    print(nb, " digits")
 
 
 def main():

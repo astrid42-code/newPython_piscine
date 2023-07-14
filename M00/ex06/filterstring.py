@@ -12,6 +12,11 @@ except Exception:
 
 
 def filter():
+
+    """
+
+    """
+    
     res = [s.translate(str.maketrans('', '', string.punctuation))]
     res = ''.join(res)
     x = res.split()
