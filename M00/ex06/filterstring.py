@@ -1,30 +1,20 @@
+from ft_filter import ft_filter
 import sys
-import string
-
-if len(sys.argv) != 3:
-    assert False, "wrong number of arguments."
-
-s = str(sys.argv[1])
-try:
-    n = int(sys.argv[2])
-except Exception:
-    assert False, "ERROR"
 
 
-def filter():
+def main():
+    if len(sys.argv) != 3:
+        assert False, "the arguments are bad"
 
-    """
-
-    """
-    
-    res = [s.translate(str.maketrans('', '', string.punctuation))]
-    res = ''.join(res)
-    x = res.split()
-    # list comprehension :
-    newlist = [words for words in x if len(words) > n]
-    print(newlist)
+    s = str(sys.argv[1])
+    try:
+        n = int(sys.argv[2])
+    except Exception:
+        assert False, "the arguments are bad"
+    ft_filter(s, n)
 
 
-filter()
+if __name__ == "__main__":
+    main()
 
 sys.exit(1)

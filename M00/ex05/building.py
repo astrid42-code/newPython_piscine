@@ -14,7 +14,7 @@ def text_analyzer(str):
 
     uc = 0
     lc = 0
-    s = 0
+    s = 1 # carriage return count as a space
     nb = 0
     if len(str) > 0:
         for i in str:
@@ -26,7 +26,7 @@ def text_analyzer(str):
                 s += 1
             elif i.isdigit():
                 nb += 1
-        total = len(str)
+        total = len(str) + 1
         # p : punctuation = total nb of chars - analyzed chars - numbers
         p = total - (uc + lc + s + nb)
         aff(total, uc, lc, p, s, nb)
@@ -52,6 +52,7 @@ def main():
         text_analyzer(text)
     except Exception:
         assert False, "argument is not a string"
+    print(text_analyzer.__doc__)
 
 
 if __name__ == "__main__":
