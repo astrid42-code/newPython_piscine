@@ -72,7 +72,10 @@ else:
 def to_morse_code(str):
 
     """
-    
+    This function takes a single string argument,
+    translate it in morse code
+    then it prints the string in morse
+    Punctuation marks and special characters result in an error
     """
     morse_code = ''
     for char in str:
