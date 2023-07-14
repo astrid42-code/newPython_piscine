@@ -8,7 +8,8 @@ s = str(sys.argv[1])
 try:
     n = int(sys.argv[2])
 except Exception:
-	assert False, "ERROR"
+    assert False, "ERROR"
+
 
 def filter():
     res = [s.translate(str.maketrans('', '', string.punctuation))]

@@ -1,7 +1,7 @@
 import sys
 
 # https://geekflare.com/fr/python-morse-code-translator/
-# only space and alphanumeric chars 
+# only space and alphanumeric chars
 NESTED_MORSE = {
     'A': '.-',
     'B': '-...',
@@ -39,7 +39,7 @@ NESTED_MORSE = {
     '8': '---..',
     '9': '----.',
     '0': '-----',
-    ' ' : '/ '
+    ' ': '/ '
     # '.': '.-.-.-',
     # ',': '--..--',
     # '?': '..--..',
@@ -68,6 +68,7 @@ elif (len(sys.argv) > 2):
 else:
     str = sys.argv[1]
 
+
 def to_morse_code(str):
     morse_code = ''
     for char in str:
@@ -78,10 +79,9 @@ def to_morse_code(str):
         morse_code += NESTED_MORSE[char] + ' '
     return morse_code
 
+
 morse_code = str
 res = to_morse_code(morse_code)
 print(res)
 
 sys.exit(1)
-
-# print error a modifier avec assertion error (mais comment?)
