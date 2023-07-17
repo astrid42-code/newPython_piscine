@@ -57,9 +57,5 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 #     height = sys.argv[1]
 #     w = sys.argv[2]
 
-
 # if __name__ == "__main__":
 #     main()
-
-
-# IMC/BMI = weight / (height)^2
