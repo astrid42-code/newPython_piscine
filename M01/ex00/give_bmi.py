@@ -13,8 +13,17 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     if (len(height) != len(weight)):
         assert False, "the lists are not equal"
     # est ce bien int ou float, si oui, les deux sont ils ints ou floats?
-    
+    i = 0
+    while i < len(height):
+        if type(height[i]) != type(weight[i]):
+            assert False, "the types are different"
+        i += 1
     # height ne peut pas etre egal a 0 (division par 0 est impossible)
+    # i = 0
+    # while i < len(height):
+    #     if height == '0':
+    #         assert False, "height can't be zero"
+    #     i+=1
 
     # si tout est ok :
     i = 0
