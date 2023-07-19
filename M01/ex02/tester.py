@@ -13,3 +13,6 @@ print(ft_load("landscape.jpg"))
 # [ 1 1 1]
 # [ 1 1 1]]]
 # $>
+
+
+# ATTENTION, mettre les images hors du dossier a la fin?
