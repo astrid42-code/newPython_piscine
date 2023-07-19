@@ -22,11 +22,11 @@ def slice_me(family: list, start: int, end: int) -> list:
         i += 1
     count_h = i + 1     
     count_w = len(family[0])
-    newfamily = [family[start:end]]
-    # print(len(newfamily))
-    newcount_h = len(newfamily)
-    newcount_w = len(newfamily[0])
+    newfamily = family[start:end]
+    i = 0
+    while i < len(newfamily) - 1:
+        i += 1    
     print("My shape is : (", count_h, ", ", count_w, ")", sep="")
-    print("My new shape is : (", newcount_h, ", ", newcount_w, ")", sep="")
+    print("My new shape is : (", len(newfamily), ", ", count_w, ")", sep="")
    
     return (newfamily)
