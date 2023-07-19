@@ -14,10 +14,20 @@ def ft_load(path: str) -> array: # (you can return to the desired format)
     # img.show()
     # prints format of image
     # print(img.format)
-    img_format_w = img.size
+    img_h = img.size[0]
+    img_w = img.size[1]
 
 
-    print("The shape of image is :", img_format_w)
+    print("The shape of image is :", img_w, img_h)
+    pix_val = list(img.getdata())
+    # print(type(pix_val))
+    print(pix_val, sep='\n')
+
     
+    # > imprime en tuple, pas en list
+    # et ne va pas a la ligne
+
+    # et la CA ME SAOULE GAVE!!!
+
     # prints mode of image
-    print(img.mode)
+    # print(img.mode)
