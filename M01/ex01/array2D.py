@@ -8,27 +8,25 @@ def slice_me(family: list, start: int, end: int) -> list:
     """
 
     # gestion des erreurs : 
+    # verif du type :
+    if type(family) != list:
+        assert False, "this is not a list"
     # verifier que les lists de family font la meme taille
     i = 0
     j = 0
-    print(family[i], " ", len(family[i]))
-    # print(start, " , ", end)
-    # while i < len(family):
-    #     print(family[i])
-    #     j = 0
-    #     while j < len(family[i]):
-    #         print(family[i][j])
-    #         if (len(family[i][j]) != len(family[i+1][j])):
-    #             assert False, "the lists are not equal"
-    #         j += 1
-    #     i += 1
-    if type(family) != list:
-        assert False, "this is not a list"
-    
-    count_h = 0
-    count_w = 0
-    i = 0
-    # for i in family:
 
-    # slice method :
-    print(family[start:end])
+
+    while i < len(family) - 1:
+        if len(family[i]) != len(family[i+1]):
+            assert False, "the lists are not equal"
+        i += 1
+    count_h = i + 1     
+    count_w = len(family[0])
+    newfamily = [family[start:end]]
+    # print(len(newfamily))
+    newcount_h = len(newfamily)
+    newcount_w = len(newfamily[0])
+    print("My shape is : (", count_h, ", ", count_w, ")", sep="")
+    print("My new shape is : (", newcount_h, ", ", newcount_w, ")", sep="")
+   
+    return (newfamily)
