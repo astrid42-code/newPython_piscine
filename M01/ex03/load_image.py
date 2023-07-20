@@ -1,14 +1,17 @@
 import numpy as np
 from array import array
-# from PIL import Image
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
 def ft_load(path: str) -> array: # (you can return to the desired format)
 
     """
-    This function loads an image, prints its format, and its pixels
-    content in RGB format. It can handle, at least, JPG and JPEG formats
+    This program should load the image "animal.jpeg", print some information
+    about it and display it after "zooming".
+    • The size in pixel on both X and Y axis
+    • The number of channel > ???
+    • The pixel content of the image.
+    • Display the scale on the x and y axis on the image
     """
 
     img = mpimg.imread(path)
@@ -26,5 +29,3 @@ def ft_load(path: str) -> array: # (you can return to the desired format)
     # plt.show()
 
 # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
-
-# reste le None final a virer ...
