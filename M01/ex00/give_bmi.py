@@ -1,14 +1,12 @@
-import numpy as np
-
-
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(height: list[int | float],
+             weight: list[int | float]) -> list[int | float]:
 
     """
-    This function takes 2 lists of integers or floats in input and returns
-    a list of BMI values.
+    This function takes 2 lists of integers or floats
+    in input and returns a list of BMI values.
     """
-    
-    # gestion des erreurs : 
+
+    # gestion des erreurs :
     # verifier que les deux lists font la meme taille
     if (len(height) != len(weight)):
         assert False, "the lists are not equal"
@@ -16,6 +14,9 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     i = 0
     while i < len(height):
         if type(height[i]) != type(weight[i]):
+            # x = isinstance(height[i], (int, float))
+            # y = isinstance(weight[i], (int, float))
+            # if type(x) != type(y):
             assert False, "the types are different"
         i += 1
     # height ne peut pas etre egal a 0 (division par 0 est impossible)
@@ -37,8 +38,9 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
     """
-    This function accepts a list of integers or floats and an integer representing
-    a limit as parameters. It returns a list of booleans (True if above the limit).
+    This function accepts a list of integers or floats
+    and an integer representing a limit as parameters.
+    It returns a list of booleans (True if above the limit).
     """
 
     i = 0
@@ -59,3 +61,6 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 # if __name__ == "__main__":
 #     main()
+
+
+# ATTENTION: ./give_bmi.py:15:28: E721 do not compare types, use 'isinstance()'

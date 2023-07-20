@@ -3,7 +3,8 @@ from array import array
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
-def ft_load(path: str) -> array: # (you can return to the desired format)
+
+def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     """
     This program should load the image "animal.jpeg", print some information
@@ -19,10 +20,12 @@ def ft_load(path: str) -> array: # (you can return to the desired format)
     if img.dtype == np.float32:
         img = (img * 255).astype(np.uint8)
     print("The shape of image is :", img.shape)
-    y,x,z = img.shape
+    y, x, z = img.shape
+
     for i in range(y):
         for j in range(x):
             print(img[i, j])
+
 
     # plt.imshow(img)
 
