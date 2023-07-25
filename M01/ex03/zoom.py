@@ -1,6 +1,6 @@
 from load_image import ft_load
 
-print(ft_load("a.jpg"))
+print(ft_load("animal.jpeg"))
 
 # expected output
 # python zoom.py
