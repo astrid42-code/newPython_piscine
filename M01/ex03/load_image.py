@@ -4,6 +4,16 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 from matplotlib.axis import Axis
 
+# def binarise(tab, seuil, w, h):
+#     """Cette fonction renvoie un tableau représentant l'image binarisée"""
+#     for i in range (0,h,1) :
+#         for j in range (0,w,1) :
+#         #print(i,j)
+#             if tab[i][j] >= seuil :
+#                 tab[i][j] = 0
+#             else :
+#                 tab[i][j] = 1
+#     return (tab)
 
 def ft_load(path: str) -> array:  # (you can return to the desired format)
 
@@ -45,15 +55,19 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     # print("y1= ", y1, "x= ", x1, "z = ", z1)
     print("New shape after slicing :", px.shape)
     
-    for i in range(y1):
-        # print("px_i=",px)
-        for j in range(x1):
-            print(px) 
+    w = len(px[0])
+    h = len(px)
+    binarise(px, 127, w, h)
+    
+    # for i in range(y1):
+    #     # print("px_i=",px)
+    #     for j in range(x1):
+    #         print(px) 
 
     # print(px)
-    # plt.imshow(px)
+    plt.imshow(px)
     # plt.imshow(img)
 
-    # plt.show()
+    plt.show()
 
 # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
