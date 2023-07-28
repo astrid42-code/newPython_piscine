@@ -15,6 +15,7 @@ from matplotlib.axis import Axis
 #                 tab[i][j] = 1
 #     return (tab)
 
+
 def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     """
@@ -40,8 +41,8 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     # for i in range(y):
     #     for j in range(x):
     #         print(img) 
-
-    # modif faite manuellement, a automatiser avec envoi des donnees par l'utilisateur? avec un input?
+    # modif faite manuellement, a automatiser 
+    # avec envoi des donnees par l'utilisateur? avec un input?
 
     beginY = 100
     endY = 500
@@ -49,20 +50,19 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     endX = 850
     px = img[beginY:endY, beginX:endX]
 
-
     y1, x1, z1 = px.shape
 
     # print("y1= ", y1, "x= ", x1, "z = ", z1)
     print("New shape after slicing :", px.shape)
-    
+
     w = len(px[0])
     h = len(px)
-    binarise(px, 127, w, h)
-    
+    # binarise(px, 127, w, h)
+
     # for i in range(y1):
     #     # print("px_i=",px)
     #     for j in range(x1):
-    #         print(px) 
+    #         print(px)
 
     # print(px)
     plt.imshow(px)
