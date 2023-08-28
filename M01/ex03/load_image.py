@@ -39,11 +39,13 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     # a decommenter pour affichage:
     # for i in range(y):
+    #     print(" i = ", i, " y = ", y)
     #     for j in range(x):
     #         print(img) 
     # modif faite manuellement, a automatiser 
     # avec envoi des donnees par l'utilisateur? avec un input?
 
+    # print( " img = ", img[0][1][2]) 
     beginY = 100
     endY = 500
     beginX = 450
@@ -54,15 +56,25 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     # print("y1= ", y1, "x= ", x1, "z = ", z1)
     print("New shape after slicing :", px.shape)
+    # print("cmap = ", px.cmap)
 
-    w = len(px[0])
-    h = len(px)
+    # w = len(px[0])
+    # h = len(px)
     # binarise(px, 127, w, h)
+
+    r = px[0][0][0]
+    g = px[0][0][1]
+    b = px[0][0][2]
+
+    grayscale = 0.3 * r + 0.59 * g + 0.11 * b
+
+    print("grayscale = ", grayscale)
 
     # for i in range(y1):
     #     # print("px_i=",px)
     #     for j in range(x1):
     #         print(px)
+
 
     # print(px)
     plt.imshow(px)
@@ -71,3 +83,5 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     plt.show()
 
 # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
+
+# penser a la fermeture du programme apres le .show()
