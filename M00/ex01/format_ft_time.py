@@ -9,8 +9,12 @@ months = {
     5: 'May',
     6: 'Jun',
     7: 'Jul',
+    8: 'Aug',
+    9: 'Sep',
+    10: 'Oct',
+    11: 'Nov',
+    12: 'Dec',
 }
-
 
 seconds = time.time()
 # len_s = len(seconds)
@@ -20,12 +24,14 @@ other_seconds = '{:.2e}'.format(time.time())
 myDate = datetime.datetime.today()
 month = myDate.month
 
-print("Seconds since January 1, 1970:", seconds, "or", other_seconds,
-      "in sientific notation")
+print("Seconds since January 1, 1970:", seconds, "or", other_seconds,"in scientific notation")
 print(months[month], myDate.day, myDate.year)
 
-# partir de la fin et tous les 3 chiffres, mettre un sep=','
+# pour affichage des secondes : partir de la fin et tous les 3 chiffres, mettre un sep=','
 # ou
-# diviser et modulo le nb de chiffres par 3 ;
+# diviser et modulo le nb de chiffres par 3 (attention, ne concerne que les chiffres à gauche du point) ;
 # le modulo me dit ou mettre la 1ere virgule
-# ensuite ous les 3 chiffres je mets une virgule avec un sep
+# ensuite tous les 3 chiffres je mets une virgule avec un sep
+# OU : TROUVER LA FONCTION QUI FAIT LE BON AFFICHAGE directement???
+
+# Attention : Le sujet demande un script (à mettre / faire ici???)
