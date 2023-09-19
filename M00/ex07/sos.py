@@ -78,9 +78,12 @@ def to_morse_code(str):
     Punctuation marks and special characters result in an error
     """
     morse_code = ''
+    print(str)
     for char in str:
+        print(char)
         if char.islower():
             char = char.upper()
+            print(char)
         elif char not in NESTED_MORSE.keys():
             assert False, "the arguments are bad"
         morse_code += NESTED_MORSE[char] + ' '
@@ -92,3 +95,6 @@ res = to_morse_code(morse_code)
 print(res)
 
 sys.exit(1)
+
+# ATTENTION : le $ coupe la string !! c est malefique
+# ex H$llo devient H ...

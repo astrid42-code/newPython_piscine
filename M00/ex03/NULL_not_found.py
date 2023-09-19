@@ -26,4 +26,3 @@ def NULL_not_found(object: any) -> int:
         return 1
 
 # ATTENTION : Running your function alone does nothing.
-# Return 0 if it goes well and 1 in case of error. > ???

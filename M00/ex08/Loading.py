@@ -5,7 +5,7 @@
 def ft_tqdm(lst: range) -> None:
 
     """
-
+    a faire!
     """
     
     # current = time.time()
@@ -22,3 +22,5 @@ def ft_tqdm(lst: range) -> None:
 
 # The '\r' character (carriage return) resets the cursor to the beginning
 # of the line and allows you to write over what was previously on the line
+
+# non termine

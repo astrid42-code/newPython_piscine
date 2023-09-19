@@ -17,13 +17,16 @@ def text_analyzer(str):
     s = 1 # carriage return count as a space
     nb = 0
     if len(str) > 0:
+        print(str)
         for i in str:
+            # print("i =",i)
             if i.isupper():
                 uc += 1
             elif i.islower():
                 lc += 1
             elif i.isspace():
                 s += 1
+                # print("s = ", s)
             elif i.isdigit():
                 nb += 1
         total = len(str) + 1
@@ -52,8 +55,11 @@ def main():
         text_analyzer(text)
     except Exception:
         assert False, "argument is not a string"
-    print(text_analyzer.__doc__)
+    # print(text_analyzer.__doc__)
 
 
 if __name__ == "__main__":
     main()
+
+# Erreur pour les spaces et les punctuation marks (ex du texte donne en argument)
+# > decalage de 2 pour spaces, de 1 pour ponctuation

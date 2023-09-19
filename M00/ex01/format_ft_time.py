@@ -16,15 +16,16 @@ months = {
     12: 'Dec',
 }
 
-seconds = time.time()
-# len_s = len(seconds)
+seconds = time.time() # seconds est un float
+
 
 
 other_seconds = '{:.2e}'.format(time.time())
 myDate = datetime.datetime.today()
 month = myDate.month
 
-print("Seconds since January 1, 1970:", seconds, "or", other_seconds,"in scientific notation")
+print("Seconds since January 1, 1970:", seconds, "or", other_seconds,
+      "in scientific notation")
 print(months[month], myDate.day, myDate.year)
 
 # pour affichage des secondes : partir de la fin et tous les 3 chiffres, mettre un sep=','
