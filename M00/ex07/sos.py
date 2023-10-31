@@ -83,10 +83,12 @@ def to_morse_code(str):
         print(char)
         if char.islower():
             char = char.upper()
-            print(char)
+            # print(char)
+        
         elif char not in NESTED_MORSE.keys():
             assert False, "the arguments are bad"
         morse_code += NESTED_MORSE[char] + ' '
+        # print(morse_code)
     return morse_code
 
 
@@ -97,4 +99,3 @@ print(res)
 sys.exit(1)
 
 # ATTENTION : le $ coupe la string !! c est malefique
-# ex H$llo devient H ...

@@ -12,17 +12,18 @@ def NULL_not_found(object: any) -> int:
     elif isNan(object):
         print("Cheese:", object, type(object))
         return 0
+    elif object is False:
+        print("Fake:", object, type(object))
+        return 0
     elif object == 0:
         print("Zero:", object, type(object))
         return 0
     elif object == '':
         print("Empty:", object, type(object))
         return 0
-    elif object is False:
-        print("Fake:", object, type(object))
-        return 0
     else:
         print("Type not Found")
         return 1
 
 # ATTENTION : Running your function alone does nothing.
+# code a moduler comme ex02?

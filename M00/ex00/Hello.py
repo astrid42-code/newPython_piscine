@@ -13,3 +13,5 @@ print(ft_list)
 print(ft_tuple)
 print(ft_set)
 print(ft_dict)
+
+# attention : resultat aleatoire pour le 3

@@ -3,7 +3,7 @@ import sys
 if (len(sys.argv) == 1):
     sys.exit(1)
 if (len(sys.argv) > 2):
-    assert False, "There are too many arguments"
+    assert False, "more than one argument is provided"
 
 sys.argv.pop(0)
 

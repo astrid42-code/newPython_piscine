@@ -1,4 +1,5 @@
 # import sys
+# from time import time
 # verifier si sys autorise ici
 
 
@@ -13,7 +14,7 @@ def ft_tqdm(lst: range) -> None:
         print('\r')
         print("|%-90s| %d%%" % ('=' * int(90 * i / len(lst)),
               (i + 1) / len(lst) * 100), end='')
-        # print("[%-20s] %d%%" % ('=' * int(20 * i / len(lst)), (i + 1) / len(lst) * 100), end= '')
+        print("[%-20s] %d%%" % ('=' * int(20 * i / len(lst)), (i + 1) / len(lst) * 100), end= '')
         # sys.stdout.write(" | elapsed time %d seconds" % (time.time() - current))
         # sys.stdout.flush()
         yield i

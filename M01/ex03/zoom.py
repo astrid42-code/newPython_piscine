@@ -1,7 +1,18 @@
 from load_image import ft_load
+#import matplotlib.image as mpimg
+import cv2
+import matplotlib.pyplot as plt
 
-print(ft_load("animal.jpeg"))
 
+#print(ft_load("animal.jpeg"))
+
+img = cv2.imread('animal.jpeg')
+#gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+#plt.imshow(img)
+#plt.show()
+img = img[...,: 3]
+plt.imshow(img)
+plt.show()
 # expected output
 # python zoom.py
 # The shape of image is: (768, 1024, 3)
