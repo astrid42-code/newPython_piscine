@@ -15,7 +15,7 @@
 #         raise AssertionError("t")
 #     print("my ft_filter() fct :")
 #     ft_filter(s, n)
-#     # print("real filter() fct :") > quels arguments a envoyer ? 
+#     # print("real filter() fct :") > quels arguments a envoyer ?
 #     # quelle fct mettre en 1er arg?
 #     # permettra de comparer les results
 #     # filter(s, n)
@@ -39,7 +39,7 @@ def main():
         assert False, "the arguments are bad"
     # print("my ft_filter() fct :")
     ft_filter(s, n)
-    # print("real filter() fct :") > quels arguments a envoyer ? 
+    # print("real filter() fct :") > quels arguments a envoyer ?
     # quelle fct mettre en 1er arg?
     # permettra de comparer les results
     # filter(s, n)

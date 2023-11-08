@@ -39,7 +39,7 @@ NESTED_MORSE = {
     '8': '---..',
     '9': '----.',
     '0': '-----',
-    ' ': '/ '
+    ' ': '/'
     # '.': '.-.-.-',
     # ',': '--..--',
     # '?': '..--..',
@@ -60,14 +60,13 @@ NESTED_MORSE = {
     # '@': '· − − · − ·',
 }
 
-str = ''
-if (len(sys.argv) == 1):
-    sys.exit(1)
-elif (len(sys.argv) > 2):
-    assert False, "the arguments are bad"
-else:
-    str = sys.argv[1]
-
+# str = ''
+# if (len(sys.argv) == 1):
+#     sys.exit(1)
+# elif (len(sys.argv) > 2):
+#     assert False, "the arguments are bad"
+# else:
+#     str = sys.argv[1]
 
 def to_morse_code(str):
 
@@ -77,14 +76,13 @@ def to_morse_code(str):
     then it prints the string in morse
     Punctuation marks and special characters result in an error
     """
+
     morse_code = ''
-    print(str)
     for char in str:
-        print(char)
         if char.islower():
             char = char.upper()
             # print(char)
-        
+
         elif char not in NESTED_MORSE.keys():
             assert False, "the arguments are bad"
         morse_code += NESTED_MORSE[char] + ' '
@@ -92,10 +90,20 @@ def to_morse_code(str):
     return morse_code
 
 
-morse_code = str
-res = to_morse_code(morse_code)
-print(res)
 
-sys.exit(1)
+def main():
+    str = ''
+    if (len(sys.argv) == 1):
+        sys.exit(1)
+    elif (len(sys.argv) > 2):
+        assert False, "the arguments are bad"
+    else:
+        str = sys.argv[1]
 
-# ATTENTION : le $ coupe la string !! c est malefique
+    morse_code = str
+    res = to_morse_code(morse_code)
+    print(res)
+
+
+if __name__ == "__main__":
+    main()

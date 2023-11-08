@@ -11,8 +11,5 @@ ft_dict = {"Hello": "42Paris!"}
 
 print(ft_list)
 print(ft_tuple)
-for x in set:
-    print(ft_set)
+print(ft_set)
 print(ft_dict)
-
-# attention : resultat aleatoire pour le 3

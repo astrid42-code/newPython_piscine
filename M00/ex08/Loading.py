@@ -25,3 +25,4 @@ def ft_tqdm(lst: range) -> None:
 # of the line and allows you to write over what was previously on the line
 
 # non termine
+# a retirer du rendu final

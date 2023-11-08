@@ -14,12 +14,10 @@ def text_analyzer(str):
 
     uc = 0
     lc = 0
-    s = 1 # carriage return count as a space
+    s = 1   # carriage return count as a space
     nb = 0
     if len(str) > 0:
-        print(str)
         for i in str:
-            # print("i =",i)
             if i.isupper():
                 uc += 1
             elif i.islower():
@@ -36,7 +34,7 @@ def text_analyzer(str):
 
 
 def aff(total, uc, lc, p, s, nb):
-    print("The text contains ", total, " characters:")
+    print("The text contains", total, "characters:")
     print(uc, " upper letters")
     print(lc, " lower letters")
     print(p, " punctuation marks")
@@ -61,5 +59,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Erreur pour les spaces et les punctuation marks (ex du texte donne en argument)
+# Erreur pour les spaces et les punctuation marks
+# (ex du texte donne en argument)
 # > decalage de 2 pour spaces, de 1 pour ponctuation
