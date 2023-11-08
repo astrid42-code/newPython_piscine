@@ -68,6 +68,7 @@ NESTED_MORSE = {
 # else:
 #     str = sys.argv[1]
 
+
 def to_morse_code(str):
 
     """
@@ -88,7 +89,6 @@ def to_morse_code(str):
         morse_code += NESTED_MORSE[char] + ' '
         # print(morse_code)
     return morse_code
-
 
 
 def main():
