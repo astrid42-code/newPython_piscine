@@ -22,7 +22,7 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     This program should load the image "animal.jpeg", print some information
     about it and display it after "zooming".
     • The size in pixel on both X and Y axis
-    • The number of channel > ???
+    • The number of channel
     • The pixel content of the image.
     • Display the scale on the x and y axis on the image
     """

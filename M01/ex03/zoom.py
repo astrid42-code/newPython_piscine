@@ -6,10 +6,12 @@ import matplotlib.pyplot as plt
 
 #print(ft_load("animal.jpeg"))
 
-img = cv2.imread('animal.jpeg')
-#gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-#plt.imshow(img)
-#plt.show()
+
+img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
+# cf https://www.geeksforgeeks.org/python-opencv-cv2-imread-method/
+# gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# plt.imshow(img)
+# plt.show()
 img = img[...,: 3]
 plt.imshow(img)
 plt.show()
