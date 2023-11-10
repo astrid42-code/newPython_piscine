@@ -11,8 +11,6 @@ NULL_not_found(Empty)
 NULL_not_found(Fake)
 print(NULL_not_found("Brian"))
 
-# a retirer du module (et a n'utiliser qu'en correction avec kks autres tests)
-
 # Expected output:
 # $>python NULL_not_found.py | cat -e
 # Nothing: None <class 'NoneType'>$

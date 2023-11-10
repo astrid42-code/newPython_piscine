@@ -1,5 +1,3 @@
-#!/bin/env python
-
 from find_ft_type import all_thing_is_obj
 ft_list = ["Hello", "tata!"]
 ft_tuple = ("Hello", "toto!")
@@ -11,5 +9,3 @@ all_thing_is_obj(ft_set)
 all_thing_is_obj(ft_dict)
 all_thing_is_obj("Brian")
 print(all_thing_is_obj(10))
-
-# a retirer du module (et a n'utiliser qu'en correction avec kks autres tests?)

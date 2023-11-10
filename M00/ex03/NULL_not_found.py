@@ -24,19 +24,3 @@ def NULL_not_found(object: any) -> int:
     else:
         print("Type not Found")
     return 1
-
-
-# VALID_TYPES = [None, float, int, str, bool]
-
-# def NULL_not_found(object: any) -> int:
-#     type_obj = type(object)
-#     formated_obj = str(type_obj).split("'")[1].capitalize()
-#     # if type_obj is float:
-#     #     print(f'{formated_obj} : {type_obj}' )
-#     # else:
-#     print(f' : {object} {type_obj}' if type_obj in VALID_TYPES
-#             else "Type not found")
-#     return 1
-
-# ATTENTION : Running your function alone does nothing.
-# code a moduler comme ex02?

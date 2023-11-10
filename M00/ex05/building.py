@@ -1,5 +1,3 @@
-# cf exo ancienne piscine mais attention : rajouter les nombres (isdigit())
-
 import sys
 
 
@@ -24,7 +22,6 @@ def text_analyzer(str):
                 lc += 1
             elif i.isspace():
                 s += 1
-                # print("s = ", s)
             elif i.isdigit():
                 nb += 1
         total = len(str) + 1
@@ -58,7 +55,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Erreur pour les spaces et les punctuation marks
-# (ex du texte donne en argument)
-# > decalage de 2 pour spaces, de 1 pour ponctuation
