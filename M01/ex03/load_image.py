@@ -15,6 +15,16 @@ from matplotlib.axis import Axis
 #                 tab[i][j] = 1
 #     return (tab)
 
+def ft_error(path: str):
+    str = path[-3:]
+    str2 = path[-4:]
+    # print(str, " ", str2)
+    # incorrect format (ex jp au lieu de jpg)
+    if (str != 'jpg' and str != 'peg' and str2 != 'jpeg' and str2 != '.jpg'):
+        assert False, "Incorrect format / path"
+    # incorrect path TODO!!
+    print("coucou")
+
 
 def ft_load(path: str) -> array:  # (you can return to the desired format)
 
@@ -27,21 +37,30 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     • Display the scale on the x and y axis on the image
     """
 
+     # handling errors :
+    ft_error(path)
+
     img = mpimg.imread(path)
-    assert img is not None, "file could not be read, check with os.path.exists()"
+
+    # "assert img is not None" means your dataloader did not get your input data.
+    # mais assert non pris en compte :(
+    # assert img is not None, "file could not be read, check with os.path.exists()"
+    
     # Si le résultat n'est pas un tableau d'entiers
     if img.dtype == np.float32:
         img = (img * 255).astype(np.uint8)
     print("The shape of image is :", img.shape)
     y, x, z = img.shape
 
-    # print("y= ", y, "x= ", x, "z = ", z)
+    print("y= ", y, "x= ", x, "z = ", z)
 
     # a decommenter pour affichage:
-    # for i in range(y):
-    #     print(" i = ", i, " y = ", y)
-    #     for j in range(x):
-    #         print(img) 
+    for i in range(y):
+        print(" i = ", i, " y = ", y)
+        # for j in range(x):
+        #     print(img) 
+            # j += 1
+        # i += 1
     # modif faite manuellement, a automatiser 
     # avec envoi des donnees par l'utilisateur? avec un input?
 
@@ -77,10 +96,10 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
 
     # print(px)
-    plt.imshow(px)
+    # plt.imshow(px)
     # plt.imshow(img)
 
-    plt.show()
+    # plt.show()
 
 # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 
