@@ -15,6 +15,7 @@ from matplotlib.axis import Axis
 #                 tab[i][j] = 1
 #     return (tab)
 
+# a modifier (cf ex02)
 def ft_error(path: str):
     str = path[-3:]
     str2 = path[-4:]
@@ -23,7 +24,7 @@ def ft_error(path: str):
     if (str != 'jpg' and str != 'peg' and str2 != 'jpeg' and str2 != '.jpg'):
         assert False, "Incorrect format / path"
     # incorrect path TODO!!
-    print("coucou")
+    # print("coucou")
 
 
 def ft_load(path: str) -> array:  # (you can return to the desired format)
@@ -49,27 +50,22 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     # Si le résultat n'est pas un tableau d'entiers
     if img.dtype == np.float32:
         img = (img * 255).astype(np.uint8)
+
     print("The shape of image is :", img.shape)
     y, x, z = img.shape
+    print(img)
 
-    print("y= ", y, "x= ", x, "z = ", z)
+    plt.imshow(img)
 
-    # a decommenter pour affichage:
-    for i in range(y):
-        print(" i = ", i, " y = ", y)
-        # for j in range(x):
-        #     print(img) 
-            # j += 1
-        # i += 1
-    # modif faite manuellement, a automatiser 
-    # avec envoi des donnees par l'utilisateur? avec un input?
+    plt.show()
 
-    # print( " img = ", img[0][1][2]) 
+
     beginY = 100
     endY = 500
     beginX = 450
     endX = 850
     px = img[beginY:endY, beginX:endX]
+    # print("lol =", px)
 
     y1, x1, z1 = px.shape
 
@@ -84,18 +80,22 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     r = px[0][0][0]
     g = px[0][0][1]
     b = px[0][0][2]
+    print("b =", px[0][0][0])
 
     grayscale = 0.3 * r + 0.59 * g + 0.11 * b
 
-    print("grayscale = ", grayscale)
+    print(" y1 = ", y1, " x1 =" , x1, " z1 = ", z1)
 
-    # for i in range(y1):
-    #     # print("px_i=",px)
-    #     for j in range(x1):
-    #         print(px)
+    for i in range(y1, 1600):
+        j = 0
+        print("i = ", i, "px_i=",px[j][0][0], " j = ", j)
+        j += 1
+        # for j in range(x1):
+        #     print(px[0][0][0])
+    # part en boucle inf
 
 
-    # print(px)
+    # print("px = ", px)
     # plt.imshow(px)
     # plt.imshow(img)
 
@@ -104,3 +104,4 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 
 # penser a la fermeture du programme apres le .show()
+

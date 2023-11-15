@@ -4,21 +4,35 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-faire main ici? et lancer le programme
-actuellement, ne fait plus rien
 
-
-#print(ft_load("animal.jpeg"))
-print("co")
-
-img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
+# img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
 # cf https://www.geeksforgeeks.org/python-opencv-cv2-imread-method/
 # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # plt.imshow(img)
 # plt.show()
-img = img[...,: 3]
+# img = img[...,: 3]
 # plt.imshow(img)
 # plt.show()
+
+def main():
+    img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
+    print(ft_load("animal.jpeg"))
+    
+    # print(img)
+    # img = img[...,: 3]
+    # plt.imshow(img)
+    # plt.show()
+    img2 = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # cv2.imshow('animal.jpeg', img2)
+    # plt.imshow(img2)
+    # plt.show()
+    # gray = cv2.imread('animal.jpeg', cv2.IMREAD_GRAYSCALE)
+    # plt.imshow(gray)
+    # plt.show()
+
+if __name__ == "__main__":
+    main()
+
 # expected output
 # python zoom.py
 # The shape of image is: (768, 1024, 3)
