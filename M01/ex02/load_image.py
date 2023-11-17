@@ -4,6 +4,8 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
 
+# if filename.endswith(".jpg"): > pour checker jpg et jpeg tout simplement!!
+# cf https://stackoverflow.com/questions/63258126/opencv-issues-in-python-resutling-int-object-is-not-callable
 def ft_error(path: str):
     str = path[-3:]
     str2 = path[-4:]
@@ -26,19 +28,33 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     img = mpimg.imread(path)
 
+    # "assert img is not None" means
+    # your dataloader did not get your input data.
+    # mais assert non pris en compte :(
+    # assert img is not None,
+    # "file could not be read, check with os.path.exists()"
+
     # Si le résultat n'est pas un tableau d'entiers
     if img.dtype == np.float32:
         img = (img * 255).astype(np.uint8)
 
     print("The shape of image is :", img.shape)
     y, x, z = img.shape
-    for i in range(y):
-        for j in range(x):
-            print(img)
+    print(img)
 
     plt.imshow(img)
 
     plt.show()
+
+
+# useless but mandatory...
+def main():
+    print("Hello 42!")
+
+
+if __name__ == "__main__":
+    main()
+
 
 # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 

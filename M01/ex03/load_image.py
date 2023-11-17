@@ -4,16 +4,6 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 from matplotlib.axis import Axis
 
-# def binarise(tab, seuil, w, h):
-#     """Cette fonction renvoie un tableau représentant l'image binarisée"""
-#     for i in range (0,h,1) :
-#         for j in range (0,w,1) :
-#         #print(i,j)
-#             if tab[i][j] >= seuil :
-#                 tab[i][j] = 0
-#             else :
-#                 tab[i][j] = 1
-#     return (tab)
 
 # a modifier (cf ex02)
 def ft_error(path: str):
@@ -52,56 +42,68 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
         img = (img * 255).astype(np.uint8)
 
     print("The shape of image is :", img.shape)
-    y, x, z = img.shape
+
     print(img)
 
     plt.imshow(img)
 
     plt.show()
 
+    # px = np.zeros((400,400))
 
-    beginY = 100
-    endY = 500
-    beginX = 450
-    endX = 850
-    px = img[beginY:endY, beginX:endX]
-    # print("lol =", px)
+    # y1, x1 = px.shape
 
-    y1, x1, z1 = px.shape
+    # for i in range(y1):
+        
+    #     for j in range(x1):
+    #         r = img[i][j]
+    #         g = img[i][j]
+    #         b = img[i][j]
+    #         grayscale = 0.3 * r + 0.59 * g + 0.11 * b
+    #         print("i = ", i, "px_i=",px[i][j], " j = ", j)
+    #         print("img_i=",img[i][j])
 
-    # print("y1= ", y1, "x= ", x1, "z = ", z1)
-    print("New shape after slicing :", px.shape)
-    # print("cmap = ", px.cmap)
+    # print("New shape after slicing :", px.shape)
+    
 
-    # w = len(px[0])
-    # h = len(px)
-    # binarise(px, 127, w, h)
-
-    r = px[0][0][0]
-    g = px[0][0][1]
-    b = px[0][0][2]
-    print("b =", px[0][0][0])
-
-    grayscale = 0.3 * r + 0.59 * g + 0.11 * b
-
-    print(" y1 = ", y1, " x1 =" , x1, " z1 = ", z1)
-
-    for i in range(y1, 1600):
-        j = 0
-        print("i = ", i, "px_i=",px[j][0][0], " j = ", j)
-        j += 1
-        # for j in range(x1):
-        #     print(px[0][0][0])
-    # part en boucle inf
+#     beginY = 100
+#     endY = 500
+#     beginX = 450
+#     endX = 850
+#     px = img[beginY:endY, beginX:endX]
+#     # print("lol =", px)
 
 
-    # print("px = ", px)
-    # plt.imshow(px)
-    # plt.imshow(img)
+#     # print("y1= ", y1, "x= ", x1, "z = ", z1)
+# #     # print("cmap = ", px.cmap)
 
-    # plt.show()
+# #     # w = len(px[0])
+# #     # h = len(px)
+# #     # binarise(px, 127, w, h)
 
-# https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
+#     r = px[0][0][0]
+#     g = px[0][0][1]
+#     b = px[0][0][2]
+#     # print("b =", px[0][0][0])
 
-# penser a la fermeture du programme apres le .show()
+#     grayscale = 0.3 * r + 0.59 * g + 0.11 * b
+
+# #     # print(" y1 = ", y1, " x1 =" , x1, " z1 = ", z1)
+
+#     for i in range(y1, 1600):
+#         # print("i = ", i, "px_i=",px[j][0][0], " j = ", j)
+        
+#         for j in range(x1):
+            
+#     # part en boucle inf
+
+# #     # print("px = ", px)
+# #     # plt.imshow(px)
+# #     # plt.imshow(img)
+
+# #     # plt.show()
+
+# # # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
+
+# # # penser a la fermeture du programme apres le .show()
 

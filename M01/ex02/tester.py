@@ -1,6 +1,14 @@
 from load_image import ft_load
 
-print(ft_load("landscape.jpg"))
+
+def main():
+    # print("Hello 42!")
+    print(ft_load("landscape.jpg"))
+
+
+if __name__ == "__main__":
+    main()
+
 
 # expected output :
 # $> python tester.py
@@ -13,5 +21,3 @@ print(ft_load("landscape.jpg"))
 # [ 1 1 1]
 # [ 1 1 1]]]
 # $>
-
-# ATTENTION, mettre les images hors du dossier a la fin?
