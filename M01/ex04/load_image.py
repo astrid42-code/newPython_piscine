@@ -1,34 +1,50 @@
 import numpy as np
 from array import array
 import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+from matplotlib.axis import Axis
+
+
+# a modifier (cf ex02)
+def ft_error(path: str):
+    str = path[-3:]
+    str2 = path[-4:]
+    # print(str, " ", str2)
+    # incorrect format (ex jp au lieu de jpg)
+    if (str != 'jpg' and str != 'peg' and str2 != 'jpeg' and str2 != '.jpg'):
+        assert False, "Incorrect format / path"
+    # incorrect path TODO!!
+    # print("coucou")
 
 
 def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     """
-    This function loads an image, prints its format, and its pixels
-    content in RGB format. It can handle, at least, JPG and JPEG formats
+    This program should load the image "animal.jpeg", print some information
+    about it and display it after "zooming".
+    • The size in pixel on both X and Y axis
+    • The number of channel
+    • The pixel content of the image.
+    • Display the scale on the x and y axis on the image
     """
 
-    # gestion d'erreurs a faire :
-    # si path incorrect (ex : h.jpg) ou format incorrect (ex jp au lieu de jpg)
+     # handling errors :
+    ft_error(path)
 
     img = mpimg.imread(path)
+
+    # "assert img is not None" means your dataloader did not get your input data.
+    # mais assert non pris en compte :(
+    # assert img is not None, "file could not be read, check with os.path.exists()"
+    
     # Si le résultat n'est pas un tableau d'entiers
     if img.dtype == np.float32:
         img = (img * 255).astype(np.uint8)
+
     print("The shape of image is :", img.shape)
-    y, x, z = img.shape
-    for i in range(y):
-        for j in range(x):
-            print(img[i, j])
 
-    # plt.imshow(img)
+    print(img)
 
-    # plt.show()
+# # # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 
-# https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
-
-# reste le None final a virer ...
-# et les [[]] au debut et a la fin
-# et la gestion d'erreur
+# # # penser a la fermeture du programme apres le .show()

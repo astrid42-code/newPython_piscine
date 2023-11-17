@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 def ft_zoom(img) :
+
     px = np.zeros((400, 400, 1))
 
     y1, x1, z1 = px.shape
@@ -28,15 +29,8 @@ def ft_zoom(img) :
             b = img[i][j][1]
             grayscale = int(0.3 * r + 0.59 * g + 0.11 * b)
             px[i][j] = grayscale
-            # print("i = ", i, "px_i=",px[i][j], " j = ", j)
-            # print("img_i=",img[i][j])
-    
-    # Si le résultat n'est pas un tableau d'entiers
-    if img.dtype == np.float32:
-        img = (img * 255).astype(np.uint8)
 
-    print("New shape after slicing :", px.shape)
-    return (px)
+    return (px.shape)
     
 
 def main():
@@ -47,20 +41,24 @@ def main():
     endY = 500
     beginX = 450
     endX = 850
-    px = img[beginY:endY, beginX:endX]
+    # prevoir une gestion d erreur si tuple pas egal a 400, 400? et si hors cadre?
+    # > la consigne voulant que le zoom soit sur une fenetre de 400 sur 400 dans l'image
+    # + automatiser pour l user de pouvoir rentrer des coordonnees?
+    tmp = img[beginY:endY, beginX:endX]
+    px = cv2.cvtColor(img[beginY:endY, beginX:endX], cv2.COLOR_RGB2GRAY)
 
-    print(ft_zoom(px))
-    # print(img)
-    # img = img[...,: 3]
-    plt.imshow(px)
+    res = ft_zoom(tmp)
+    # print(ft_zoom(tmp))
+    y1, x1 = px.shape
+    print("New shape after slicing :", res, "or", tuple(px.shape[1::-1])) #https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
+    print(px)
+    # pb dans affichage final et regler le tuple (400, 400, 1) 
+    # > sans avoir besoin de faire la conversion dans ft_zoom
+    # + tout mettre dans zoom??
+    plt.imshow(px, cmap='gray') # tag cmap pour affichage NB avec plt
+    # cf https://stackoverflow.com/questions/62855718/why-would-cv2-color-rgb2gray-and-cv2-color-bgr2gray-give-different-results
     plt.show()
-    # img2 = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-    # cv2.imshow('animal.jpeg', img2)
-    # plt.imshow(img2)
-    # plt.show()
-    # gray = cv2.imread('animal.jpeg', cv2.IMREAD_GRAYSCALE)
-    # plt.imshow(gray)
-    # plt.show()
+
 
 if __name__ == "__main__":
     main()

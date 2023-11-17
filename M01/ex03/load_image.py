@@ -45,65 +45,6 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     print(img)
 
-    plt.imshow(img)
-
-    plt.show()
-
-    # px = np.zeros((400,400))
-
-    # y1, x1 = px.shape
-
-    # for i in range(y1):
-        
-    #     for j in range(x1):
-    #         r = img[i][j]
-    #         g = img[i][j]
-    #         b = img[i][j]
-    #         grayscale = 0.3 * r + 0.59 * g + 0.11 * b
-    #         print("i = ", i, "px_i=",px[i][j], " j = ", j)
-    #         print("img_i=",img[i][j])
-
-    # print("New shape after slicing :", px.shape)
-    
-
-#     beginY = 100
-#     endY = 500
-#     beginX = 450
-#     endX = 850
-#     px = img[beginY:endY, beginX:endX]
-#     # print("lol =", px)
-
-
-#     # print("y1= ", y1, "x= ", x1, "z = ", z1)
-# #     # print("cmap = ", px.cmap)
-
-# #     # w = len(px[0])
-# #     # h = len(px)
-# #     # binarise(px, 127, w, h)
-
-#     r = px[0][0][0]
-#     g = px[0][0][1]
-#     b = px[0][0][2]
-#     # print("b =", px[0][0][0])
-
-#     grayscale = 0.3 * r + 0.59 * g + 0.11 * b
-
-# #     # print(" y1 = ", y1, " x1 =" , x1, " z1 = ", z1)
-
-#     for i in range(y1, 1600):
-#         # print("i = ", i, "px_i=",px[j][0][0], " j = ", j)
-        
-#         for j in range(x1):
-            
-#     # part en boucle inf
-
-# #     # print("px = ", px)
-# #     # plt.imshow(px)
-# #     # plt.imshow(img)
-
-# #     # plt.show()
-
 # # # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 
 # # # penser a la fermeture du programme apres le .show()
-
