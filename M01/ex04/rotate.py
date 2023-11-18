@@ -1,6 +1,14 @@
 from load_image import ft_load
 
-print(ft_load("animal.jpg"))
+def main():
+    img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
+    print(ft_load("animal.jpeg"))
+
+
+if __name__ == "__main__":
+    main()
+
+
 
 # expected output:
 # $> python rotate.py

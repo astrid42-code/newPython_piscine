@@ -1,8 +1,8 @@
-import numpy as np
+# import numpy as np
 from load_image import ft_load
-#import matplotlib.image as mpimg
-import cv2
-import matplotlib.pyplot as plt
+# import matplotlib.image as mpimg
+# import cv2
+# import matplotlib.pyplot as plt
 
 
 # img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
+    # img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
     print(ft_load("animal.jpeg"))
-    
+
 
 if __name__ == "__main__":
     main()
