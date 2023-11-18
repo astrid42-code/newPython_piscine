@@ -3,6 +3,7 @@ from array import array
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 from matplotlib.axis import Axis
+import cv2
 
 
 # a modifier (cf ex02)
@@ -43,7 +44,34 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     print("The shape of image is :", img.shape)
 
+    x1, y1, z1 = img.shape
+
     print(img)
+
+    #phase 2 : zoom and gray change
+
+    beginY = 100
+    endY = 500
+    beginX = 450
+    endX = 850
+    if (endY - beginY != 400 or endX - beginX != 400
+        or beginY < 0 or beginX < 0 or endY > x1 or endX > y1):
+        assert False, "coordinates are wrong"
+
+    # prevoir une gestion d erreur si tuple pas egal a 400, 400? et si hors cadre?
+    # > la consigne voulant que le zoom soit sur une fenetre de 400 sur 400 dans l'image
+    # + automatiser pour l user de pouvoir rentrer des coordonnees?
+
+    px = cv2.cvtColor(img[beginY:endY, beginX:endX], cv2.COLOR_RGB2GRAY)
+    tmp = np.reshape(px, (endY - beginY, endX - beginX, 1))
+
+    print("New shape after slicing :", tmp.shape, "or", px.shape) 
+    # tuple(px.shape[1::-1])) > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
+    print(px)
+    # > pb dans affichage final 
+    plt.imshow(px, cmap='gray') # tag cmap pour affichage NB avec plt
+    # cf https://stackoverflow.com/questions/62855718/why-would-cv2-color-rgb2gray-and-cv2-color-bgr2gray-give-different-results
+    plt.show()
 
 # # # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 
