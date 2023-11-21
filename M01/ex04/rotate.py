@@ -1,7 +1,7 @@
 from load_image import ft_load
 
 def main():
-    img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
+    # img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
     print(ft_load("animal.jpeg"))
 
 

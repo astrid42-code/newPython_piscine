@@ -9,9 +9,10 @@ import matplotlib.pyplot as plt
 def ft_error(path: str):
     str = path[-3:]
     str2 = path[-4:]
-    # print(str, " ", str2)
-    # incorrect format (ex jp au lieu de jpg)
+    # print(path)
+    # # incorrect format (ex jp au lieu de jpg)
     if (str != 'jpg' and str != 'peg' and str2 != 'jpeg' and str2 != '.jpg'):
+    # if (str.endswith(".jpg") is false) or (str.endswith(".jpeg") is false):
         assert False, "Incorrect format / path"
     # incorrect path TODO!!
 
@@ -24,7 +25,7 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     """
 
     # handling errors :
-    ft_error(path)
+    # ft_error(str)
 
     img = mpimg.imread(path)
 

@@ -52,8 +52,10 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     beginY = 100
     endY = 500
+    height = endY - beginY
     beginX = 450
     endX = 850
+    width = endX - beginX
     if (endY - beginY != 400 or endX - beginX != 400
        or beginY < 0 or beginX < 0 or endY > x1 or endX > y1):
         assert False, "coordinates are wrong"
@@ -61,11 +63,14 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     # + automatiser pour l user de pouvoir rentrer des coordonnees?
 
     px = cv2.cvtColor(img[beginY:endY, beginX:endX], cv2.COLOR_RGB2GRAY)
-    tmp = np.reshape(px, (endY - beginY, endX - beginX, 1))
+    # tmp = np.reshape(px, (endY - beginY, endX - beginX, 1))
+    # tmp = np.reshape(px, (height, width, 1))
+    tmp = np.reshape(px, (height, width, 1))
 
     print("New shape after slicing :", tmp.shape, "or", px.shape)
     # tuple(px.shape[1::-1])) > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
 
+    # print(px)
     print(tmp)
 
     plt.imshow(px, cmap='gray')  # tag cmap pour affichage NB avec plt
