@@ -9,6 +9,8 @@ if __name__ == "__main__":
     main()
 
 
+# Faire un tester.py (comme dans les autres exos)
+
 
 # expected output:
 # $> python rotate.py

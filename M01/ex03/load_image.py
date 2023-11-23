@@ -20,6 +20,7 @@ def ft_error(path: str):
 
 def ft_load(path: str) -> array:  # (you can return to the desired format)
 
+    # Refaire la docstring si necessaire
     """
     This program should load the image "animal.jpeg", print some information
     about it and display it after "zooming".
