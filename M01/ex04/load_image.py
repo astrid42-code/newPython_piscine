@@ -64,7 +64,7 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     print("The shape of image is :", tmp.shape, "or", px.shape)
     # tuple(px.shape[1::-1])) > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
 
-    # print(tmp) # (ou tmp)
+    print(tmp) # (ou tmp)
 
     #  phase 3: rotate img 
 
@@ -76,11 +76,11 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     for x in range(x2):
         for y in range (y2):
             res[y][x] = px[x][y]
-            
             # print("tmp = ", tmp[y][x], " px = ", px[x][y])
 
+    res = np.reshape(res, (400, 400))
+    print("New shape after Transpose is :", res.shape)
     print(res)
-
 
     plt.imshow(res, cmap='gray')  # tag cmap pour affichage NB avec plt
     # cf https://stackoverflow.com/questions/62855718/why-would-cv2-color-rgb2gray-and-cv2-color-bgr2gray-give-different-results
