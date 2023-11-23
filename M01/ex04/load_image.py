@@ -64,24 +64,25 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     print("The shape of image is :", tmp.shape, "or", px.shape)
     # tuple(px.shape[1::-1])) > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
 
-    print(tmp) # (ou tmp)
+    # print(tmp) # (ou tmp)
 
     #  phase 3: rotate img 
 
     x2, y2 = px.shape
-    print(" x2 = ", x2, " y2 = ", y2)
 
-    # creer un nouvel array plutot que d utiliser tmp (qui es une refeerence sur px)
-    
+    # https://snakify.org/fr/lessons/two_dimensional_lists_arrays/ 
+    res = [[i * j for j in range(y2)] for i in range(x2)]
+
     for x in range(x2):
         for y in range (y2):
-            tmp[x][y] = px[y][x]
+            res[y][x] = px[x][y]
+            
             # print("tmp = ", tmp[y][x], " px = ", px[x][y])
 
-    print(px)
+    print(res)
 
 
-    plt.imshow(tmp, cmap='gray')  # tag cmap pour affichage NB avec plt
+    plt.imshow(res, cmap='gray')  # tag cmap pour affichage NB avec plt
     # cf https://stackoverflow.com/questions/62855718/why-would-cv2-color-rgb2gray-and-cv2-color-bgr2gray-give-different-results
     plt.show()
 
