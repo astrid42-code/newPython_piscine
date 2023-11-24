@@ -3,7 +3,7 @@ from array import array
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 # from matplotlib.axis import Axis
-import cv2
+# import cv2
 
 
 # a modifier (cf ex02)

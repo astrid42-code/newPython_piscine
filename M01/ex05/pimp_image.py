@@ -3,7 +3,7 @@ from array import array
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
-import cv2
+# import cv2
 
 # You have some restriction operators for each function: (you can only use those given,
 # you don’t have to use them all) > see 
@@ -27,8 +27,8 @@ def ft_invert(array) -> array:
 
     # print(res)
 
-    # plt.imshow(res)
-    # plt.show()
+    plt.imshow(res)
+    plt.show()
 
     return(res)
 
@@ -52,7 +52,7 @@ def ft_red(array) -> array:
                      res[l, c, i] = 0
                 # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
 
-    print(res)
+    # print(res)
 
     plt.imshow(res)
     plt.show()
@@ -66,6 +66,25 @@ def ft_green(array) -> array:
     """
     Turns in green the image received
     """
+    img = np.asarray(array)
+    h, w, _ = array.shape
+
+    res = np.copy(img)
+    for l in range(h):
+        for c in range(w):
+            # res[l, c] = 255
+            for i in range(3):
+                if (i != 1):
+                     res[l, c, i] = 0
+                # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
+
+    # print(res)
+
+    plt.imshow(res)
+    plt.show()
+
+    return(res)
+
 
 def ft_blue(array) -> array:
     # blue: =
@@ -73,6 +92,25 @@ def ft_blue(array) -> array:
     """
     Turns in blue the image received
     """
+    img = np.asarray(array)
+    h, w, _ = array.shape
+
+    res = np.copy(img)
+    for l in range(h):
+        for c in range(w):
+            # res[l, c] = 255
+            for i in range(3):
+                if (i != 2):
+                     res[l, c, i] = 0
+                # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
+
+    # print(res)
+
+    plt.imshow(res)
+    plt.show()
+
+    return(res)
+
 
 def ft_grey(array) -> array:
     # grey: =, /
@@ -80,7 +118,28 @@ def ft_grey(array) -> array:
     """
     Turns in grey the image received
     """
+    img = np.asarray(array)
+    h, w, _ = array.shape
 
+    res = np.copy(img)
+    for l in range(h):
+        for c in range(w):
+            # res[l, c] = 255
+            for i in range(3):
+                r = res[l, c, 0]
+                g = res[l, c, 1]
+                b = res[l, c, 2]
+
+                #sauf qu'on n'a pas le droit a * ??!!
+                res[l, c, i] = 0.2126 * r + 0.7152 * g + 0.0722 * b
+                # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
+
+    # print(res)
+
+    plt.imshow(res)
+    plt.show()
+
+    return(res)
 
 # useless but mandatory...
 def main():
