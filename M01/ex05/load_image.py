@@ -44,9 +44,11 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     y, x, z = img.shape
     print(img)
 
-    plt.imshow(img)
+    # plt.imshow(img)
 
-    plt.show()
+    # plt.show()
+
+    return(img)
 
 # # # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 
