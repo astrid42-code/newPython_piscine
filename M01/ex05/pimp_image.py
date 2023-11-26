@@ -1,12 +1,11 @@
-from load_image import ft_load
 from array import array
 import numpy as np
-import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 # import cv2
 
 # You have some restriction operators for each function: (you can only use those given,
-# you don’t have to use them all) > see 
+# you don’t have to use them all)
+
 
 def ft_invert(array) -> array:
     # invert: =, +, -, *
@@ -19,18 +18,18 @@ def ft_invert(array) -> array:
     h, w, _ = array.shape
 
     res = np.copy(img)
-    for l in range(h):
-        for c in range(w):
+    for line in range(h):
+        for col in range(w):
             for i in range(3):
                 # print("res = ", res[l, c, i])
-                res[l, c, i] = 255 - img[l, c, i]
+                res[line, col, i] = 255 - img[line, col, i]
 
     # print(res)
 
     plt.imshow(res)
     plt.show()
 
-    return(res)
+    return (res)
 
 
 def ft_red(array) -> array:
@@ -44,20 +43,19 @@ def ft_red(array) -> array:
     h, w, _ = array.shape
 
     res = np.copy(img)
-    for l in range(h):
-        for c in range(w):
+    for line in range(h):
+        for col in range(w):
             # res[l, c] = 255
             for i in range(3):
                 if (i != 0):
-                     res[l, c, i] = 0
-                # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
+                    res[line, col, i] = 0
 
     # print(res)
 
     plt.imshow(res)
     plt.show()
 
-    return(res)
+    return (res)
 
 
 def ft_green(array) -> array:
@@ -70,20 +68,19 @@ def ft_green(array) -> array:
     h, w, _ = array.shape
 
     res = np.copy(img)
-    for l in range(h):
-        for c in range(w):
+    for line in range(h):
+        for col in range(w):
             # res[l, c] = 255
             for i in range(3):
                 if (i != 1):
-                     res[l, c, i] = 0
-                # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
+                    res[line, col, i] = 0
 
     # print(res)
 
     plt.imshow(res)
     plt.show()
 
-    return(res)
+    return (res)
 
 
 def ft_blue(array) -> array:
@@ -96,24 +93,23 @@ def ft_blue(array) -> array:
     h, w, _ = array.shape
 
     res = np.copy(img)
-    for l in range(h):
-        for c in range(w):
-            # res[l, c] = 255
+    for line in range(h):
+        for col in range(w):
             for i in range(3):
                 if (i != 2):
-                     res[l, c, i] = 0
-                # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
+                    res[line, col, i] = 0
 
     # print(res)
 
     plt.imshow(res)
     plt.show()
 
-    return(res)
+    return (res)
 
 
 def ft_grey(array) -> array:
     # grey: =, /
+    # https://www.baeldung.com/cs/convert-rgb-to-grayscale
 
     """
     Turns in grey the image received
@@ -122,24 +118,24 @@ def ft_grey(array) -> array:
     h, w, _ = array.shape
 
     res = np.copy(img)
-    for l in range(h):
-        for c in range(w):
+    for line in range(h):
+        for col in range(w):
             # res[l, c] = 255
             for i in range(3):
-                r = res[l, c, 0]
-                g = res[l, c, 1]
-                b = res[l, c, 2]
+                r = res[line, col, 0]
+                g = res[line, col, 1]
+                b = res[line, col, 2]
 
-                #sauf qu'on n'a pas le droit a * ??!!
-                res[l, c, i] = 0.2126 * r + 0.7152 * g + 0.0722 * b
-                # > if i != 0 (donc != du premier index de mon rgb) je mets a 0 (il ne reste alors que le rouge)
+                # sauf qu'on n'a pas le droit a * ??!!
+                res[line, col, i] = 0.3 * r + 0.59 * g + 0.11 * b
 
     # print(res)
 
     plt.imshow(res)
     plt.show()
 
-    return(res)
+    return (res)
+
 
 # useless but mandatory...
 def main():

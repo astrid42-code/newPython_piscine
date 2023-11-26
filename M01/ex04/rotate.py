@@ -1,7 +1,7 @@
 from load_image import ft_load
 
+
 def main():
-    # img = cv2.imread('animal.jpeg') # cv2.imread_grayscale('animal.jpeg', 0) pour passer en N&B?
     print(ft_load("animal.jpeg"))
 
 
@@ -9,7 +9,7 @@ if __name__ == "__main__":
     main()
 
 
-# Faire un tester.py (comme dans les autres exos)
+# Faire un tester.py (comme dans les autres exos) ?
 
 
 # expected output:

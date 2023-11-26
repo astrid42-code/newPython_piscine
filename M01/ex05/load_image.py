@@ -1,21 +1,8 @@
 import numpy as np
 from array import array
 import matplotlib.image as mpimg
-import matplotlib.pyplot as plt
 # from matplotlib.axis import Axis
 # import cv2
-
-
-# a modifier (cf ex02)
-def ft_error(path: str):
-    str = path[-3:]
-    str2 = path[-4:]
-    # print(str, " ", str2)
-    # incorrect format (ex jp au lieu de jpg)
-    if (str != 'jpg' and str != 'peg' and str2 != 'jpeg' and str2 != '.jpg'):
-        assert False, "Incorrect format / path"
-    # incorrect path TODO!!
-    # print("coucou")
 
 
 def ft_load(path: str) -> array:  # (you can return to the desired format)
@@ -26,7 +13,13 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     """
 
     # handling errors :
-    # ft_error(str)
+    if (path.endswith(".jpg") is False) and (path.endswith(".jpeg") is False):
+        assert False, "Incorrect format / path"
+    try:
+        file = open(path)
+        file.close()
+    except Exception:
+        assert False, "Unknown path"
 
     img = mpimg.imread(path)
 
@@ -48,7 +41,7 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     # plt.show()
 
-    return(img)
+    return (img)
 
 # # # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
 

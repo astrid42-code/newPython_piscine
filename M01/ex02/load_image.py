@@ -4,19 +4,6 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
 
-# if filename.endswith(".jpg"): > pour checker jpg et jpeg tout simplement!!
-# cf https://stackoverflow.com/questions/63258126/opencv-issues-in-python-resutling-int-object-is-not-callable
-def ft_error(path: str):
-    str = path[-3:]
-    str2 = path[-4:]
-    # print(path)
-    # # incorrect format (ex jp au lieu de jpg)
-    if (str != 'jpg' and str != 'peg' and str2 != 'jpeg' and str2 != '.jpg'):
-    # if (str.endswith(".jpg") is false) or (str.endswith(".jpeg") is false):
-        assert False, "Incorrect format / path"
-    # incorrect path TODO!!
-
-
 def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     """
@@ -26,6 +13,14 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     # handling errors :
     # ft_error(str)
+    # print(path.endswith(".jpg"))
+    if (path.endswith(".jpg") is False) and (path.endswith(".jpeg") is False):
+        assert False, "Incorrect format / path"
+    try:
+        file = open(path)
+        file.close()
+    except Exception:
+        assert False, "Unknown path"
 
     img = mpimg.imread(path)
 

@@ -6,18 +6,6 @@ import matplotlib.pyplot as plt
 import cv2
 
 
-# a modifier (cf ex02)
-def ft_error(path: str):
-    str = path[-3:]
-    str2 = path[-4:]
-    # print(str, " ", str2)
-    # incorrect format (ex jp au lieu de jpg)
-    if (str != 'jpg' and str != 'peg' and str2 != 'jpeg' and str2 != '.jpg'):
-        assert False, "Incorrect format / path"
-    # incorrect path TODO!!
-    # print("coucou")
-
-
 def ft_load(path: str) -> array:  # (you can return to the desired format)
 
     # Refaire la docstring si necessaire
@@ -31,7 +19,13 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     """
 
     # handling errors :
-    ft_error(path)
+    if (path.endswith(".jpg") is False) and (path.endswith(".jpeg") is False):
+        assert False, "Incorrect format / path"
+    try:
+        file = open(path)
+        file.close()
+    except Exception:
+        assert False, "Unknown path"
 
     img = mpimg.imread(path)
 
@@ -63,19 +57,18 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     tmp = np.reshape(px, (endY - beginY, endX - beginX, 1))
 
     print("The shape of image is :", tmp.shape, "or", px.shape)
-    # tuple(px.shape[1::-1])) > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
 
-    print(tmp) # (ou tmp)
+    print(tmp)  # (ou tmp)
 
-    #  phase 3: rotate img 
+    #  phase 3: rotate img
 
     x2, y2 = px.shape
 
-    # https://snakify.org/fr/lessons/two_dimensional_lists_arrays/ 
+    # https://snakify.org/fr/lessons/two_dimensional_lists_arrays/
     res = [[i * j for j in range(y2)] for i in range(x2)]
 
     for x in range(x2):
-        for y in range (y2):
+        for y in range(y2):
             res[y][x] = px[x][y]
             # print("tmp = ", tmp[y][x], " px = ", px[x][y])
 
@@ -84,9 +77,10 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     print(res)
 
     plt.imshow(res, cmap='gray')  # tag cmap pour affichage NB avec plt
-    # cf https://stackoverflow.com/questions/62855718/why-would-cv2-color-rgb2gray-and-cv2-color-bgr2gray-give-different-results
     plt.show()
 
-# # # https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
+# cf https://stackoverflow.com/questions/62855718/why-would-cv2-color-rgb2gray-and-cv2-color-bgr2gray-give-different-results
+# https://yard.onl/sitelycee/cours/python/traitementdimageonrecuperelesdon.html
+# tuple(px.shape[1::-1])) > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
 
-# # # penser a la fermeture du programme apres le .show()
+# penser a la fermeture du programme apres le .show()
