@@ -1,7 +1,7 @@
 from load_csv import load
+from aff_life import aff_life
 
-df = print(load("life_expectancy_years.csv"))
-print(aff_life(df))
+print(load("life_expectancy_years.csv"))
 
 # expected output
 # python tester.py
