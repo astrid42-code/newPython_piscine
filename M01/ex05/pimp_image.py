@@ -118,16 +118,19 @@ def ft_grey(array) -> array:
     h, w, _ = array.shape
 
     res = np.copy(img)
-    for line in range(h):
-        for col in range(w):
-            # res[l, c] = 255
-            for i in range(3):
-                r = res[line, col, 0]
-                g = res[line, col, 1]
-                b = res[line, col, 2]
+    # for line in range(h):
+    #     for col in range(w):
+    #         res[l, c] = 255
+    #             for i in range(3):
+    #                 r = res[line, col, 0]
+    #                 g = res[line, col, 1]
+    #                 b = res[line, col, 2]
 
-                # sauf qu'on n'a pas le droit a * ??!!
-                res[line, col, i] = 0.3 * r + 0.59 * g + 0.11 * b
+    #                 # sauf qu'on n'a pas le droit a * ??!!
+    #                 res[line, col, i] = 0.3 * r + 0.59 * g + 0.11 * b
+    for line in res:
+        for px in line:
+            px[0] = px[1] = px[2] = px.sum() / 3
 
     # print(res)
 

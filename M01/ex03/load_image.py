@@ -63,13 +63,15 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     tmp = np.reshape(px, (height, width, 1))
 
     print("New shape after slicing :", tmp.shape, "or", px.shape)
-    # tuple(px.shape[1::-1])) > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
+    # tuple(px.shape[1::-1])) 
+    # > https://stackoverflow.com/questions/19098104/python-opencv2-cv2-wrapper-to-get-image-size
 
     # print(px)
     print(tmp)
 
-    plt.imshow(px, cmap='gray')  # tag cmap pour affichage NB avec plt
+    # tag cmap pour affichage NB avec plt
     # # cf https://stackoverflow.com/questions/62855718/why-would-cv2-color-rgb2gray-and-cv2-color-bgr2gray-give-different-results
+    plt.imshow(px, cmap='gray')  
     plt.show()
 
 

@@ -1,6 +1,7 @@
 import numpy as np
 from array import array
 import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
 # from matplotlib.axis import Axis
 # import cv2
 
@@ -37,9 +38,9 @@ def ft_load(path: str) -> array:  # (you can return to the desired format)
     y, x, z = img.shape
     print(img)
 
-    # plt.imshow(img)
+    plt.imshow(img)
 
-    # plt.show()
+    plt.show()
 
     return (img)
 
