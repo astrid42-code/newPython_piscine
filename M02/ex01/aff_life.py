@@ -16,14 +16,19 @@ def aff_life(graph, country): # quelle valeur de return?
     Your graph must have a title and a legend for each axis.
     '''
 
-    df = graph['country'] == country
-    name = graph['country'].values[0]
-    life_expect = df.values[0]
+    df = graph[graph['country'] == country]
+    data = np.array(df)
+    dates = graph.head(1)[1:]
+    print("dates = ", dates)
+    data_life = data[0][1:]
+    print("data life = ", data_life)
+    # name = df.values[0]
+    # print(name)
 
-    res = plt.plot([life_expect], [1])
-    plt.xlabel('Year')
-    plt.ylabel('Life expectancy')
-    plt.show()
+    # plt.plot(dates, data_life)
+    # plt.xlabel('Year')
+    # plt.ylabel('Life expectancy')
+    # plt.show()
     
     
     
