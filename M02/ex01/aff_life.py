@@ -1,6 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
 
 # 1 recuperer la ligne de donnees correspondant a la france (comment?)
 # 2 definir x et y avec :
@@ -9,59 +7,25 @@ import pandas as pd
 # 3 plt.plot(x, y)
 
 
-def aff_life(graph, country): # quelle valeur de return?
+def aff_life(graph, country):
 
     '''
     Function displays the country information of your campus.
     Your graph must have a title and a legend for each axis.
     '''
 
-    df = graph[graph['country'] == country]
-    data = np.array(df)
-    dates = graph.head(1)[1:]
-    print("dates = ", dates)
-    data_life = data[0][1:]
-    print("data life = ", data_life)
-    # name = df.values[0]
-    # print(name)
+    if graph is None:
+        return print('Error in data')
 
-    # plt.plot(dates, data_life)
-    # plt.xlabel('Year')
-    # plt.ylabel('Life expectancy')
-    # plt.show()
-    
-    
-    
-#     df = graph.loc[graph['country'] == country] # = ligne pour la France (mais aussi le header?)
+    res = graph[country:country].transpose()
+    res.plot(xlabel='Year', ylabel='Life expectancy',
+             title=country+' Life expectancy Projections')
 
+    plt.show()
 
-
-#     # print(graph['country'])
-
-#     # print(type(graph['country'])) # > type = series, ie les colonnes d'un dataframe
-#     # un data frame a 2 dimensions avec plusieurs colonnes, alors que la Series n’a qu’une seule dimension. 
-#     # Une Series ne peut contenir qu’un seul type, alors qu’un data frame, qui est finalement une collection de Series, peut contenir des colonnes de types différents
-#     # https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science/7857439-manipulez-le-data-frame
-
-#     # print(df.iloc[0]) # > France et sa data
-#     # print(graph.sort_values('country'))
-#     # print(df.iloc[0,1:])
-
-#     # print(df.iloc[0:,0:])
-
-
-#     # print(df.iloc[0][0]) # > France
-    
-#     x = df
-
-#     x = df.iloc[0,1:]
-#     y = df.loc() #df.index > donne le nbr total de lignes dans le doc
-#     # print(y) # la ligne de titre : mais comment la recup?
-#     plt.plot(x, df)
-#     plt.xlabel('Year')
-#     plt.ylabel('Life expectancy')
-#     plt.axis([1800, 2080, 30, 80])
-#     plt.show()
+# un data frame a 2 dimensions avec plusieurs colonnes, alors que la Series n’a qu’une seule dimension.
+# Une Series ne peut contenir qu’un seul type, alors qu’un data frame, qui est finalement une collection de Series, peut contenir des colonnes de types différents
+# https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science/7857439-manipulez-le-data-frame
 
 # # https://python.doctor/page-creer-graphiques-scientifiques-python-apprendre
 

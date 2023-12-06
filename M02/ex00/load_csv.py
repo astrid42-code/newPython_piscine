@@ -9,24 +9,13 @@ def load(path: str) -> pd.DataFrame:
     of the data set and returns it
     '''
 
+    if not path.endswith('.csv'):
+        return print("CSV only")
     try:
-        open(path, "r")
+        df = pd.read_csv(path, index_col=0)
+        # index_col=0 > begins at the country column
+        print("Loading dataset of dimensions", df.shape)
+        # The shape attribute returns a two-item tuple of the number of rows and the number of columns in the DataFrame. For a Series, it returns a one-item tuple
     except Exception:
-        print("Unvalid path/file")
-        return
-
-    # autres cas d'erreurs a voir?
-    # genre le type est-il bien DataFrame?
-
-    df = pd.read_csv(path)
-
-    # The shape attribute returns a two-item tuple of the number of rows and the number of columns in the DataFrame. For a Series, it returns a one-item tuple
-    print("Loading dataset of dimensions", df.shape)
-    print(df)
-    # print(type(df))
-    # imprime correctement le tableau mais egalement : [195 rows x 302 columns]
-    # a retirer(?)
-
-    # doit on close?
-
-    return (df)
+        return print("Unvalid path/file")
+    return df

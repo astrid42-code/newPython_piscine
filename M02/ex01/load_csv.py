@@ -9,21 +9,11 @@ def load(path: str) -> pd.DataFrame:
     of the data set and returns it
     '''
 
+    if not path.endswith('.csv'):
+        return print("CSV only")
     try:
-        open(path, "r")
+        df = pd.read_csv(path, index_col=0)
+        print("Loading dataset of dimensions", df.shape)
     except Exception:
-        print("Unvalid path/file")
-        return
-
-    # autres cas d'erreurs a voir?
-    # genre le type est-il bien DataFrame?
-
-    df = pd.read_csv(path)
-
-    # The shape attribute returns a two-item tuple of the number of rows and the number of columns in the DataFrame. For a Series, it returns a one-item tuple
-    print("Loading dataset of dimensions", df.shape)
-    # print(df)
-    # print(type(df))
-
-    return (df)
-    # doit on close?
+        return print("Unvalid path/file")
+    return df
