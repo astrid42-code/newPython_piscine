@@ -1,11 +1,5 @@
 import matplotlib.pyplot as plt
 
-# 1 recuperer la ligne de donnees correspondant a la france (comment?)
-# 2 definir x et y avec :
-# x = la 1ere ligne de mon csv (sans 1ere colonne)
-# y = la ligne de donnees correspondant a la France (sans la 1ere colonne)
-# 3 plt.plot(x, y)
-
 
 def aff_life(graph, country):
 
@@ -17,11 +11,19 @@ def aff_life(graph, country):
     if graph is None:
         return print('Error in data')
 
-    res = graph[country:country].transpose()
+    # print(graph[country:country])
+    res = graph[country:country].transpose()  # ou uniquement graph.transpose() ??
     res.plot(xlabel='Year', ylabel='Life expectancy',
              title=country+' Life expectancy Projections')
-
+    # print(res)
     plt.show()
+
+def main():
+    res = load("life_expectancy_years.csv")
+    aff_life(res, 'France')
+
+if __name__ == "__main__":
+    main()
 
 # un data frame a 2 dimensions avec plusieurs colonnes, alors que la Series n’a qu’une seule dimension.
 # Une Series ne peut contenir qu’un seul type, alors qu’un data frame, qui est finalement une collection de Series, peut contenir des colonnes de types différents

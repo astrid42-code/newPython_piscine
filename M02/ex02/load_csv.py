@@ -16,5 +16,4 @@ def load(path: str) -> pd.DataFrame:
         print("Loading dataset of dimensions", df.shape)
     except Exception:
         return print("Unvalid path/file")
-    print(df)
     return df
