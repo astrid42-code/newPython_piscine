@@ -13,7 +13,7 @@ def projection(df1, df2):
         return print('Error in data')
     data_gross = df1['1900']
     data_life = df2['1900']
-    
+
     plt.scatter(data_gross, data_life)
     plt.title('1900')
     plt.xlabel('Gross domestic product')
