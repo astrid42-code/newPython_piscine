@@ -28,17 +28,9 @@ def aff_pop(graph, mycountry, othercountry):
     # res = tmp.iloc[0:251, :]
     print(res)
     # erreur dans les axis a corriger
-    res.plot(xlabel='Year', ylabel='Population',
+    plot = res.plot(xlabel='Year', ylabel='Population',
              title='Population Projections')
 
-    # tmp1 = data[[mycountry]].replace(modif_dict, regex=True).map(eval).astype(int)
-    # tmp2 = data[[othercountry]].replace(modif_dict, regex=True).map(eval).astype(int)
-    # print(tmp2)
-    # tmp1.plot()
-    # plt.axis(['1800', '2050', "20M", "60M"])
-    # plt.axis(tmp)
-    
-    # plt.ylim(20, 60)
     plt.show()
 
 # def aff_pop(data: pd.DataFrame, versus: str):
@@ -57,7 +49,6 @@ def aff_pop(graph, mycountry, othercountry):
 #     df_between.plot(xlabel="Year", ylabel="Population",
 #                     title="Population Projections")
 #     plt.show()
-
 
 
 def main():
