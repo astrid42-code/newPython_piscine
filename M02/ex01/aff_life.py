@@ -13,9 +13,13 @@ def aff_life(graph, country):
         return print('Error in data')
 
     # print(graph[country:country])
-    res = graph[country:country].transpose()  # ou uniquement graph.transpose() ??
+    res = graph[country:country].transpose()
     res.plot(xlabel='Year', ylabel='Life expectancy',
              title=country+' Life expectancy Projections')
+    plt.axis(xmin=0, xmax=290)
+    plt.xticks([0, 40, 80, 120, 160, 200, 240, 280],
+               ['1800', '1840', '1880', '1920', '1960',
+                '2000', '2040', '2080'])
     # print(res)
     plt.show()
 
