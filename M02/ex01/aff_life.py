@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from load_csv import load
 
 
 def aff_life(graph, country):
@@ -18,9 +19,11 @@ def aff_life(graph, country):
     # print(res)
     plt.show()
 
+
 def main():
     res = load("life_expectancy_years.csv")
     aff_life(res, 'France')
+
 
 if __name__ == "__main__":
     main()
