@@ -22,3 +22,13 @@ print(Lyanna.__dict__)
 # Your docstring for Method
 # ---
 # {'first_name': 'Lyanna', 'is_alive': False}
+
+# > pb dans l'import 
+
+from S1E9 import Character
+
+hodor = Character("hodor")
+
+# Expected output :
+# TypeError: Can't instantiate abstract class Character with abstract method
+# >ok
