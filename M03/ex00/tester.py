@@ -1,4 +1,4 @@
-from S1E9 import Character, Stark
+from S1E9 import Stark  # Character ne passe as dans l'import au niveau de la norme (pk???)
 
 
 Ned = Stark("Ned")
