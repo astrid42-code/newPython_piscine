@@ -33,19 +33,21 @@ class Stark(Character):
         '''
         Init Stark's class
         '''
-        try:
-            Character.__init__(self, name, is_alive)
-        except Exception as e:
-            print(e)
+        # try:
+        #     Character.__init__(self, name, is_alive)
+        # except Exception as e:
+        #     print(e)
+        Character.__init__(self, name, is_alive)
 
     def die(self):
         '''
-        method checking if is the character alive
+        method that passes is_alive from True to False
         '''
-        try:
-            self.is_alive = not self.is_alive
-        except Exception as e:
-            print(e)
+        # try:
+        #     self.is_alive = not self.is_alive
+        # except Exception as e:
+        #     print(e)
+        self.is_alive = False
 
 # https://irma.math.unistra.fr/~franck/cours/Pythonl2/cours7_2021_slides.pdf
 # Une classe abstraite est une classe qui ne permet pas d’instancier des objets.

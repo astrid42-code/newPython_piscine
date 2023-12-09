@@ -1,4 +1,4 @@
-from S1E9 import Stark  # Character ne passe as dans l'import au niveau de la norme (pk???)
+from S1E9 import Stark
 
 
 Ned = Stark("Ned")
@@ -23,12 +23,10 @@ print(Lyanna.__dict__)
 # ---
 # {'first_name': 'Lyanna', 'is_alive': False}
 
-# > pb dans l'import 
+# TEST ERROR
 
 from S1E9 import Character
-
 hodor = Character("hodor")
 
 # Expected output :
 # TypeError: Can't instantiate abstract class Character with abstract method
-# >ok
