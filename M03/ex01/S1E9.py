@@ -10,41 +10,30 @@ with a method that passes is_alive from True to False
     """
 
     def __init__(self, name, is_alive=True):
-        '''
-Init Character's class
-        '''
+        '''Init Character's class'''
 
-        self.name = name
+        self.first_name = name
         self.is_alive = is_alive
 
     @abstractmethod
     def die(self):
-        '''
-method checking if is the character alive
-        '''
+        '''method checking if is the character alive'''
         pass
 
 
 class Stark(Character):
-    """
-"stark" class inherits from Character's class
-    """
+    """"stark" class inherits from Character's class"""
 
     def __init__(self, name, is_alive=True):
-        '''
-Init Stark's class
-        '''
+        '''Init Stark's class'''
         # try:
         #     Character.__init__(self, name, is_alive)
         # except Exception as e:
         #     print(e)
         Character.__init__(self, name, is_alive)
-        self.family_name = "Baratheon"
 
     def die(self):
-        '''
-method that passes is_alive from True to False
-        '''
+        '''method that passes is_alive from True to False'''
         # try:
         #     self.is_alive = False
         # except Exception as e:
