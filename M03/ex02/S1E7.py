@@ -13,9 +13,15 @@ class Baratheon(Character):
         self.hairs = "dark"
 
     def __str__(self):
+        '''The __str__() method returns a human-readable, or informal,
+        string representation of an object. '''
+
         return f'Vector: (\'{self.family_name}\', {self.eyes}\',{self.hairs})'
 
     def __repr__(self):
+        '''The __repr__() method returns a more information-rich,
+        or official, string representation of an object.'''
+
         return f'Vector: (\'{self.family_name}\', {self.eyes}\',{self.hairs})'
         # return self.__str__()
 
@@ -37,9 +43,15 @@ class Lannister(Character):
         self.hairs = "light"
 
     def __str__(self):
+        '''The __str__() method returns a human-readable, or informal,
+        string representation of an object. '''
+
         return f'Vector: (\'{self.family_name}\', {self.eyes}\',{self.hairs})'
 
     def __repr__(self):
+        '''The __repr__() method returns a more information-rich,
+        or official, string representation of an object.'''
+
         return f'Vector: (\'{self.family_name}\', {self.eyes}\',{self.hairs})'
         # return self.__str__()
 
