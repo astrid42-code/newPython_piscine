@@ -24,6 +24,10 @@ def ft_statistics(*args: Any, **kwargs: Any) -> None:
             if value not in VALUES:
                 # print("out")
                 pass
+            else:
+                print(f'{value} : ')
+                # faire une variable res qui fit un type de calcul en fct de la value demandee (ex mean = add tous les elements puis diviser par le total, ...) 
+
             # print("keys = ", key)
             # print("values = ", value)
             
