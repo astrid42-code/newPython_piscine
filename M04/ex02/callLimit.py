@@ -9,7 +9,6 @@ def callLimit(limit: int):
 
             nonlocal count
             if count >= limit:
-                # raise Exception(f"Error: ", function, "call too many times")
                 print(f'Error: {function} call too many times')
             else:
                 function()

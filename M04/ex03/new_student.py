@@ -17,11 +17,7 @@ class Student:
     You must not use __str__ , __repr__ in your class
     The login and id should not be initializable and must return an error.'''
 
-    # handling error a faire :
-    # le login et l id ne peuvent pas etre initilise
-    # dans les args envoyes a l instanciation de la classe
-    # cf 2eme test du tester
-
+    # handling error :
     name: str
     surname: str
     active: bool = True

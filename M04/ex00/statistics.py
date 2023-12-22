@@ -1,21 +1,9 @@
 from typing import Any
 
 
-# def ft_ft(ptr_ft(value)):
-#     '''Method for a function pointer '''
-
-#     if value == 'mean':
-#         res = ft_mean(args)
-#     elif value == 'median':
-#         res = ft_median(args)
-#     elif value == 'quartile':
-#         res = ft_quartile(args)
-#     elif value == 'std':
-#         res = ft_std(args)
-
-
 def ft_mean(args: list[int | float]) -> float:
     '''Method to calculate mean of tuple args'''
+
     len_res = len(args)
     res = 0
     for indice, value in enumerate(args):
@@ -68,17 +56,27 @@ def ft_statistics(*args: Any, **kwargs: Any) -> None:
     Standard Deviation and Variance according to the **kwargs ask.'''
 
     # handling errors :
-    # print(len(set(args)))
-    # print(args)
-    # print(isinstance(args, int))
-    # if isinstance(args, int | float) is not True :
-    #     print("ERROR")
-    #     return
-    # int min et max?
-    # int only?
-    # tjrs le meme type dans la liste
+
+    # print("size=", len(set(args)), "args = ",args)
+    # print("size=", len(set(kwargs)), "kwargs = ", kwargs)
+    # print("type : ", type(args), " ", type(kwargs))
+
+    if (args):
+        tmp = type(args[0])
 
     if (args and kwargs):
+        for i in args:
+            count = type(i)
+            # print("count = ", count)
+            if (tmp != count):
+                return print("Error : elements must be of the same type")
+
+            if isinstance(i, int | float) is False:
+                return print("There is an error in args")
+        for i in kwargs:
+            # print("i=",i, " ", isinstance(i, str))
+            if isinstance(i, str) is False:
+                return print("There is an error in kwargs")
         # faire des if dans un premier temps en fct du mot cle des kwargs
         # puis encapsuler avec un dico/une liste (comme dans M00)
         VALUES = ["mean", "median", "quartile", "std", "var"]
