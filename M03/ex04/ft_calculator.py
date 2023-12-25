@@ -10,6 +10,7 @@ class calculator:
         self.V2 = v2
 
     # decorator
+    
     def dotproduct(V1: list[float], V2: list[float]) -> None:
         ''' decorator : addition of products of the list elements'''
 

@@ -13,7 +13,8 @@ def pow(x: int | float) -> int | float:
 def outer(x: int | float, function) -> object:
     '''function that takes as argument a number and a function,
     it returns an object that when called returns the result
-    of the arguments calculation'''
+    of the arguments calculation
+    '''
 
     count = 0
 
@@ -25,3 +26,7 @@ def outer(x: int | float, function) -> object:
             count = function(x)
         return (count)
     return inner
+
+# Inner functions are used so that they can be protected from everything
+# happening outside the function. This process is also known as Encapsulation.
+# https://www.geeksforgeeks.org/python-inner-functions/
